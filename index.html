@@ -229,11 +229,169 @@
   .note-banner{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:200;background:var(--ink);color:#fff;font-size:12px;padding:9px 18px;border-radius:100px;box-shadow:0 8px 30px rgba(0,0,0,.3);font-family:'Geist'}
   .note-banner b{color:var(--gold)}
 
+  /* ---- multi-page router ---- */
+  .page{display:none}
+  .page.active{display:block}
+
+  /* inner page hero */
+  .page-hero{position:relative;padding:180px 0 96px;overflow:hidden;background:var(--alabaster)}
+  .page-hero .ph-bg{position:absolute;inset:0;z-index:0;background:
+     radial-gradient(46% 60% at 90% -6%, rgba(201,162,39,.16),transparent 60%),
+     radial-gradient(58% 70% at 104% 108%, rgba(96,0,29,.12),transparent 60%),
+     linear-gradient(180deg,#FCFAF6,var(--alabaster))}
+  .ph-in{position:relative;z-index:2}
+  .ph-title{font-family:'Fraunces';font-weight:300;font-size:64px;line-height:1.02;letter-spacing:-1.8px;color:var(--ink);margin:20px 0 18px}
+  .ph-title em{font-style:italic;color:var(--maroon)}
+  .ph-lede{font-size:18px;color:var(--muted);line-height:1.65;max-width:580px}
+
+  /* timeline */
+  .timeline{position:relative;padding-left:8px;max-width:760px}
+  .tl-item{position:relative;padding:0 0 42px 38px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-line{position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--platinum))}
+  .tl-item::before{content:'';position:absolute;left:0;top:4px;width:14px;height:14px;border-radius:50%;background:var(--maroon);box-shadow:0 0 0 3px var(--alabaster),0 0 0 5px var(--gold)}
+  .tl-year{font-family:'Fraunces';font-weight:500;font-size:15px;color:var(--gold);margin-bottom:4px}
+  .tl-body h4{font-family:'Fraunces';font-weight:500;font-size:22px;margin-bottom:6px}
+  .tl-body p{font-size:15px;color:var(--muted);line-height:1.7}
+
+  /* values */
+  .vals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .vcard{background:#fff;border:1px solid var(--platinum);border-radius:16px;padding:30px 24px;transition:transform .35s,box-shadow .35s}
+  .vcard:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(96,0,29,.10)}
+  .vcard .vic{width:46px;height:46px;border-radius:12px;background:var(--alabaster);border:1px solid var(--platinum);display:flex;align-items:center;justify-content:center;color:var(--maroon);margin-bottom:18px}
+  .vcard .vic svg{width:22px;height:22px}
+  .vcard h4{font-family:'Fraunces';font-weight:500;font-size:20px;margin-bottom:7px}
+  .vcard p{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+  /* team */
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .member .ph{aspect-ratio:4/5;border-radius:14px;overflow:hidden;margin-bottom:16px;box-shadow:0 14px 36px rgba(96,0,29,.10)}
+  .member .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .member:hover .ph img{transform:scale(1.06)}
+  .member h4{font-family:'Fraunces';font-weight:500;font-size:19px}
+  .member .role{font-size:12.5px;color:var(--gold);font-weight:600;margin-top:3px;letter-spacing:.3px}
+  .member>p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:9px}
+
+  /* gallery masonry */
+  .gallery{columns:4;column-gap:16px}
+  .gallery .g{break-inside:avoid;margin-bottom:16px;border-radius:14px;overflow:hidden;cursor:zoom-in;position:relative}
+  .gallery .g img{width:100%;display:block;transition:transform .6s}
+  .gallery .g:hover img{transform:scale(1.06)}
+  .gallery .g::after{content:'⤢';position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;background:rgba(252,250,246,.92);color:var(--maroon);display:flex;align-items:center;justify-content:center;font-size:14px;opacity:0;transition:opacity .3s}
+  .gallery .g:hover::after{opacity:1}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:300;background:rgba(26,20,24,.93);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:88%;max-height:88%;border-radius:10px;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+  .lb-close{position:absolute;top:22px;right:32px;color:#fff;font-size:40px;cursor:pointer;line-height:1}
+
+  /* map */
+  .map-row{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+  .map-h{font-family:'Fraunces';font-weight:300;font-size:46px;letter-spacing:-1px;margin:16px 0 28px}
+  .map-h em{font-style:italic;color:var(--maroon)}
+  .contact-list{display:flex;flex-direction:column;gap:18px}
+  .contact-list .ci{display:flex;gap:15px;align-items:flex-start}
+  .contact-list .ci .ic{width:44px;height:44px;border-radius:12px;background:var(--alabaster);border:1px solid var(--platinum);display:flex;align-items:center;justify-content:center;color:var(--maroon);flex-shrink:0}
+  .contact-list .ci .ic svg{width:19px;height:19px}
+  .contact-list .ci .t{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+  .contact-list .ci .v{font-size:16px;font-weight:500;margin-top:3px;line-height:1.4}
+  .map-frame{border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(96,0,29,.16);border:1px solid var(--platinum);height:440px}
+  .map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.25) contrast(1.04)}
+
+  /* coverage detail rows */
+  .cov-detail{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:64px 0;border-bottom:1px solid var(--platinum)}
+  .cov-detail:last-of-type{border-bottom:none}
+  .cov-detail.flip .cov-d-media{order:2}
+  .cov-d-media{aspect-ratio:5/4;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 24px 60px rgba(96,0,29,.14)}
+  .cov-d-media img{width:100%;height:100%;object-fit:cover}
+  .cov-d-num{font-family:'Fraunces';font-weight:500;font-size:15px;color:var(--gold);letter-spacing:1px}
+  .cov-d-body h3{font-family:'Fraunces';font-weight:300;font-size:42px;letter-spacing:-1px;margin:10px 0 14px}
+  .cov-d-body h3 em{font-style:italic;color:var(--maroon)}
+  .cov-d-body>p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:22px;max-width:460px}
+  .cov-points{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+  .cov-points .pt{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+  .cov-points .pt .ck{width:22px;height:22px;border-radius:50%;background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px}
+
+  /* bundle callout */
+  .bundle{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--maroon),var(--maroon-deep));border-radius:22px;padding:56px;display:flex;align-items:center;justify-content:space-between;gap:40px;color:#fff}
+  .bundle .bglow{position:absolute;right:-10%;top:-40%;width:520px;height:520px;background:radial-gradient(circle,rgba(201,162,39,.20),transparent 62%)}
+  .bundle .bt{position:relative;z-index:2}
+  .bundle h3{font-family:'Fraunces';font-weight:300;font-size:38px;letter-spacing:-1px;line-height:1.1}
+  .bundle h3 em{font-style:italic;color:var(--gold)}
+  .bundle p{font-size:16px;color:rgba(255,255,255,.72);margin-top:12px;max-width:440px;line-height:1.6}
+  .bundle .bcta{position:relative;z-index:2;flex-shrink:0}
+
+  /* quote page */
+  .quote-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:start}
+  .qform{background:#fff;border:1px solid var(--platinum);border-radius:20px;padding:40px;box-shadow:0 20px 50px rgba(96,0,29,.08)}
+  .qprog{display:flex;align-items:center;gap:10px;margin-bottom:30px}
+  .qprog .bar{flex:1;height:5px;border-radius:5px;background:var(--platinum);overflow:hidden}
+  .qprog .bar i{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--maroon),var(--gold));border-radius:5px;transition:width .45s ease}
+  .qprog .lbl{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.5px;white-space:nowrap}
+  .qstep{display:none}
+  .qstep.on{display:block;animation:slidein .45s ease}
+  @keyframes slidein{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+  .qstep h3{font-family:'Fraunces';font-weight:500;font-size:26px;margin-bottom:6px}
+  .qstep .sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+  .qopts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .qopt{border:1.5px solid var(--platinum);border-radius:13px;padding:18px;cursor:pointer;display:flex;gap:12px;align-items:center;transition:border-color .25s,background .25s}
+  .qopt:hover{border-color:var(--gold)}
+  .qopt.sel{border-color:var(--maroon);background:rgba(96,0,29,.04)}
+  .qopt .qic{width:38px;height:38px;border-radius:10px;background:var(--alabaster);display:flex;align-items:center;justify-content:center;color:var(--maroon);flex-shrink:0}
+  .qopt .qt{font-family:'Fraunces';font-weight:500;font-size:17px}
+  .qopt .qd{font-size:12px;color:var(--muted)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px}
+  .field input,.field select{width:100%;padding:13px 15px;border:1.5px solid var(--platinum);border-radius:11px;font-family:'Geist';font-size:14px;color:var(--ink);background:#fff;transition:border-color .25s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--maroon)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .qnav{display:flex;justify-content:space-between;align-items:center;margin-top:28px}
+  .qback{font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;background:none;border:none}
+  .qback:hover{color:var(--maroon)}
+  .qnext{background:var(--maroon);color:#fff;font-size:14px;font-weight:600;padding:14px 28px;border-radius:100px;border:none;cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:transform .25s,box-shadow .25s}
+  .qnext:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(96,0,29,.24)}
+  .qdone{text-align:center;padding:24px 10px}
+  .qcheck{width:74px;height:74px;border-radius:50%;background:var(--maroon);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 20px;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}
+  @keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+  .qdone h3{font-family:'Fraunces';font-weight:500;font-size:28px;margin-bottom:8px}
+  .qdone p{font-size:15px;color:var(--muted);line-height:1.6;max-width:380px;margin:0 auto}
+  .trust-side{display:flex;flex-direction:column;gap:16px}
+  .tside-card{background:var(--alabaster);border:1px solid var(--platinum);border-radius:16px;padding:24px}
+  .tside-card .big{font-family:'Fraunces';font-weight:500;font-size:30px;color:var(--maroon)}
+  .tside-card .lab{font-size:13px;color:var(--muted);margin-top:4px}
+  .tside-card.dark{background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));color:#fff;border:none}
+  .tside-card.dark .q{font-family:'Fraunces';font-style:italic;font-size:17px;line-height:1.45}
+  .tside-card.dark .who{font-size:13px;color:rgba(255,255,255,.65);margin-top:10px}
+  .tside-list{display:flex;flex-direction:column;gap:13px}
+  .tside-list .li{display:flex;gap:11px;align-items:center;font-size:14px}
+  .tside-list .li .ck{color:var(--gold)}
+
+  /* claim page */
+  .claim-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+  .cstep{background:#fff;border:1px solid var(--platinum);border-radius:16px;padding:30px 26px;position:relative}
+  .cstep .cn{font-family:'Fraunces';font-weight:400;font-size:40px;color:var(--gold);line-height:1;margin-bottom:14px}
+  .cstep h4{font-family:'Fraunces';font-weight:500;font-size:20px;margin-bottom:8px}
+  .cstep p{font-size:14px;color:var(--muted);line-height:1.6}
+  .claim-cta-band{background:var(--alabaster);border:1px solid var(--platinum);border-radius:20px;padding:44px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .claim-cta-band h3{font-family:'Fraunces';font-weight:300;font-size:32px;letter-spacing:-.5px}
+  .claim-cta-band h3 em{font-style:italic;color:var(--maroon)}
+  .claim-phone{display:flex;align-items:center;gap:14px}
+  .claim-phone .pic{width:54px;height:54px;border-radius:14px;background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:center}
+  .claim-phone .pn{font-family:'Fraunces';font-weight:500;font-size:26px;color:var(--maroon)}
+  .claim-phone .pl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
   @media(max-width:900px){
-    .hero-grid,.why-grid,.spot-wrap{grid-template-columns:1fr}
+    .hero-grid,.why-grid,.spot-wrap,.map-row,.quote-wrap{grid-template-columns:1fr}
     h1.hero-h{font-size:52px}.cov-grid{grid-template-columns:1fr 1fr}
-    .band .in,.foot-grid,.arch-grid{grid-template-columns:repeat(2,1fr)}
-    .trust-chip{left:auto;right:20px}
+    .band .in,.foot-grid,.arch-grid,.vals-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery{columns:2}
+    .ph-title{font-size:44px}
+    .cov-detail{grid-template-columns:1fr;gap:30px}
+    .cov-detail.flip .cov-d-media{order:0}
+    .claim-steps{grid-template-columns:1fr}
+    .bundle,.claim-cta-band{flex-direction:column;text-align:center}
+    .qopts,.frow{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -487,7 +645,270 @@
 </section>
 </div><!-- /page-home -->
 
+<!-- ============ ABOUT PAGE ============ -->
+<div id="page-about" class="page">
+  <section class="page-hero">
+    <div class="ph-bg"></div>
+    <div class="wrap ph-in">
+      <div class="eyebrow reveal"><span class="ln"></span>About Yeti Insurance</div>
+      <h1 class="ph-title reveal">A local agency that<br>puts <em>members first.</em></h1>
+      <p class="ph-lede reveal">Founded in Irving, Texas in 2021, Yeti Insurance was built on a simple idea — insurance should feel personal again. No call centers, no scripts. Just neighbors looking out for neighbors.</p>
+    </div>
+  </section>
 
+  <section class="pad">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>Our story</div><h2>Built on service,<br>not <em>sales.</em></h2></div>
+      <div class="timeline">
+        <div class="tl-line"></div>
+        <div class="tl-item reveal"><div class="tl-year">2021</div><div class="tl-body"><h4>The beginning</h4><p>Yeti Insurance opens its doors in Las Colinas with one mission: treat every client like family, and explain coverage in language that actually makes sense.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-year">2023</div><div class="tl-body"><h4>1,000 families strong</h4><p>Word of mouth carries us past a thousand members — auto, home, health and life — all served by real people who answer the phone.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-year">2024</div><div class="tl-body"><h4>Claims advocacy first</h4><p>We formalize what we'd always done: standing on the client's side of every claim, start to finish.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-year">2026</div><div class="tl-body"><h4>5,000+ members &amp; counting</h4><p>Still local. Still Irving. Still committed to service excellence — just a whole lot more families calling Yeti theirs.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad why">
+    <div class="wrap">
+      <div class="sec-head reveal" style="text-align:center;margin:0 auto 56px"><div class="eyebrow" style="display:inline-block"><span class="ln"></span>What we stand for</div><h2>Values that <em>show up.</em></h2></div>
+      <div class="vals-grid">
+        <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h4>Local &amp; present</h4><p>We live and work in Irving. When you call, you reach someone who knows your name.</p></div>
+        <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>Honest guidance</h4><p>Plain language, no jargon, no upsell. You only pay for the coverage you actually need.</p></div>
+        <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h4>Always on your side</h4><p>At claim time we advocate for you with the carrier — not the other way around.</p></div>
+        <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div><h4>Family-first</h4><p>Every policy protects someone's family. We never forget there are real people behind it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>Meet the team</div><h2>The people <em>behind Yeti.</em></h2></div>
+      <div class="team-grid">
+        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam21/500/620"></div><h4>Shraddha Shrestha</h4><div class="role">CEO &amp; Managing Director</div><p>Leads Yeti with a simple vision — insurance that's personal, honest, and built around members.</p></div>
+        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam22/500/620"></div><h4>Suraj Poudyal</h4><div class="role">Principal Agent &amp; Co-Owner / Partner</div><p>Your go-to for auto, property and tailored coverage that fits real life.</p></div>
+        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam23/500/620"></div><h4>Anjana Shrestha</h4><div class="role">Agent &amp; Managing Partner · Health &amp; Life</div><p>Helps families protect their health and plan ahead with confidence.</p></div>
+        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam24/500/620"></div><h4>Radha Thapa</h4><div class="role">Life Insurance Partner · New York Life</div><p>Specializes in life coverage that secures what matters most for the long run.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="background:var(--alabaster)">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>Life at Yeti</div><h2>Our <em>gallery.</em></h2></div>
+      <div class="gallery" id="gallery">
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg1/500/640"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg2/500/420"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg3/500/560"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg4/500/400"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg5/500/600"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg6/500/450"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg7/500/520"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg8/500/660"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg9/500/430"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg10/500/580"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg11/500/470"></div>
+        <div class="g reveal"><img src="https://picsum.photos/seed/yg12/500/540"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="wrap map-row">
+      <div class="map-info reveal">
+        <div class="eyebrow"><span class="ln"></span>Visit us</div>
+        <h2 class="map-h">Come say <em>hello.</em></h2>
+        <div class="contact-list">
+          <div class="ci"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><div class="t">Office</div><div class="v">222 W Las Colinas Blvd #1650E,<br>Irving, TX 75039</div></div></div>
+          <div class="ci"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span><div><div class="t">Phone</div><div class="v">(469) 345-6419</div></div></div>
+          <div class="ci"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><div class="t">Email</div><div class="v">hello@yetiinsu.com</div></div></div>
+          <div class="ci"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><div class="t">Hours</div><div class="v">Mon–Fri · 9am – 6pm</div></div></div>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=222+W+Las+Colinas+Blvd,+Irving,+TX+75039&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta"><div class="glow"></div><div class="wrap in"><h2 class="reveal">Ready to protect<br>what <em>matters most?</em></h2><p class="reveal">Get a free, no-pressure quote in minutes.</p><a class="btn-gold reveal" data-page="quote">Get Your Free Quote <span>→</span></a></div></section>
+</div><!-- /page-about -->
+
+<!-- ============ COVERAGE PAGE ============ -->
+<div id="page-coverage" class="page">
+  <section class="page-hero">
+    <div class="ph-bg"></div>
+    <div class="wrap ph-in">
+      <div class="eyebrow reveal"><span class="ln"></span>What we cover</div>
+      <h1 class="ph-title reveal">Coverage for every<br>part of <em>life.</em></h1>
+      <p class="ph-lede reveal">Four ways to protect what matters — each one shopped across A-rated carriers to fit your life and your budget.</p>
+    </div>
+  </section>
+  <section class="pad" style="padding-bottom:40px"><div class="wrap">
+    <div class="cov-detail">
+      <div class="cov-d-media reveal"><img src="https://picsum.photos/seed/yetiauto5/720/580"></div>
+      <div class="cov-d-body reveal">
+        <div class="cov-d-num">01 — Auto</div>
+        <h3>Auto <em>insurance.</em></h3>
+        <p>Cars, trucks, motorcycles, and the people in them — covered with rates that actually make sense for the way you drive.</p>
+        <div class="cov-points">
+          <div class="pt"><span class="ck">✓</span> Liability, collision &amp; comprehensive</div>
+          <div class="pt"><span class="ck">✓</span> Uninsured motorist protection</div>
+          <div class="pt"><span class="ck">✓</span> Roadside assistance &amp; rental options</div>
+        </div>
+        <a class="btn-primary" data-page="quote">Get an auto quote <span>→</span></a>
+      </div>
+    </div>
+    <div class="cov-detail flip">
+      <div class="cov-d-media reveal"><img src="https://picsum.photos/seed/yetihome9/720/580"></div>
+      <div class="cov-d-body reveal">
+        <div class="cov-d-num">02 — Property</div>
+        <h3>Property <em>insurance.</em></h3>
+        <p>Your home and everything in it, protected against the unexpected — from storms to theft to the things you never see coming.</p>
+        <div class="cov-points">
+          <div class="pt"><span class="ck">✓</span> Dwelling &amp; personal property</div>
+          <div class="pt"><span class="ck">✓</span> Liability &amp; loss of use</div>
+          <div class="pt"><span class="ck">✓</span> Renters &amp; condo options too</div>
+        </div>
+        <a class="btn-primary" data-page="quote">Get a property quote <span>→</span></a>
+      </div>
+    </div>
+    <div class="cov-detail">
+      <div class="cov-d-media reveal"><img src="https://picsum.photos/seed/yetihealth4/720/580"></div>
+      <div class="cov-d-body reveal">
+        <div class="cov-d-num">03 — Health</div>
+        <h3>Health <em>insurance.</em></h3>
+        <p>Individual and family plans that keep the people you love well — without the guesswork or the surprise bills.</p>
+        <div class="cov-points">
+          <div class="pt"><span class="ck">✓</span> Individual &amp; family plans</div>
+          <div class="pt"><span class="ck">✓</span> Dental &amp; vision add-ons</div>
+          <div class="pt"><span class="ck">✓</span> Guidance through every option</div>
+        </div>
+        <a class="btn-primary" data-page="quote">Get a health quote <span>→</span></a>
+      </div>
+    </div>
+    <div class="cov-detail flip">
+      <div class="cov-d-media reveal"><img src="https://picsum.photos/seed/yetilife7/720/580"></div>
+      <div class="cov-d-body reveal">
+        <div class="cov-d-num">04 — Life</div>
+        <h3>Life <em>insurance.</em></h3>
+        <p>Term and whole life coverage so the people who depend on you always will be cared for — whatever the future holds.</p>
+        <div class="cov-points">
+          <div class="pt"><span class="ck">✓</span> Term &amp; whole life</div>
+          <div class="pt"><span class="ck">✓</span> Coverage that grows with you</div>
+          <div class="pt"><span class="ck">✓</span> Honest, pressure-free advice</div>
+        </div>
+        <a class="btn-primary" data-page="quote">Get a life quote <span>→</span></a>
+      </div>
+    </div>
+  </div></section>
+  <section class="pad" style="padding-top:0"><div class="wrap">
+    <div class="bundle reveal">
+      <div class="bglow"></div>
+      <div class="bt"><h3>Bundle &amp; <em>save more.</em></h3><p>Combine auto and home (or more) and watch both premiums drop. We'll show you the exact savings before you commit to anything.</p></div>
+      <a class="btn-gold bcta" data-page="quote">See your bundle savings <span>→</span></a>
+    </div>
+  </div></section>
+  <section class="pad faq"><div class="wrap">
+    <div class="sec-head" style="text-align:center;margin:0 auto 56px"><div class="eyebrow reveal" style="display:inline-block"><span class="ln"></span>Coverage questions</div><h2 class="reveal">Good to <em>know.</em></h2></div>
+    <div class="faq-list">
+      <div class="qa"><div class="qa-q"><h4>Can I customize my coverage?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>Always. Every policy we write is shaped around your actual needs — never a one-size-fits-all template. We'll walk you through exactly what each option means.</p></div></div>
+      <div class="qa"><div class="qa-q"><h4>How much can I save by bundling?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>It varies, but most members who bundle auto and home save meaningfully on both. We'll run the numbers and show you the combined price up front.</p></div></div>
+      <div class="qa"><div class="qa-q"><h4>Which carriers do you work with?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>We're an independent agency, so we shop multiple A-rated carriers to find your best fit — instead of pushing a single company's products.</p></div></div>
+    </div>
+  </div></section>
+  <section class="cta"><div class="glow"></div><div class="wrap in"><h2 class="reveal">Not sure what<br>you <em>need?</em></h2><p class="reveal">Tell us about your life — we'll handle the rest.</p><a class="btn-gold reveal" data-page="quote">Get Your Free Quote <span>→</span></a></div></section>
+</div><!-- /page-coverage -->
+
+<!-- ============ QUOTE PAGE ============ -->
+<div id="page-quote" class="page">
+  <section class="page-hero" style="padding-bottom:56px">
+    <div class="ph-bg"></div>
+    <div class="wrap ph-in">
+      <div class="eyebrow reveal"><span class="ln"></span>Get a quote</div>
+      <h1 class="ph-title reveal">Your quote, in<br><em>two minutes.</em></h1>
+      <p class="ph-lede reveal">No spam, no obligation. Tell us a little about you and a real person from our Irving office follows up the same day.</p>
+    </div>
+  </section>
+  <section class="pad" style="padding-top:24px"><div class="wrap quote-wrap">
+    <div class="qform reveal">
+      <div class="qprog"><div class="lbl" id="qlbl">Step 1 of 3</div><div class="bar"><i id="qbar"></i></div></div>
+      <div class="qstep on" data-step="1">
+        <h3>What do you need covered?</h3><div class="sub">Pick one to start — you can add more later.</div>
+        <div class="qopts">
+          <div class="qopt" data-val="Auto"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13l2-5a2 2 0 012-1.5h10A2 2 0 0119 8l2 5v5a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></svg></span><div><div class="qt">Auto</div><div class="qd">Cars, trucks &amp; more</div></div></div>
+          <div class="qopt" data-val="Property"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span><div><div class="qt">Property</div><div class="qd">Home &amp; belongings</div></div></div>
+          <div class="qopt" data-val="Health"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><div><div class="qt">Health</div><div class="qd">Individual &amp; family</div></div></div>
+          <div class="qopt" data-val="Life"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><div class="qt">Life</div><div class="qd">Term &amp; whole life</div></div></div>
+        </div>
+        <div class="qnav"><span></span><button class="qnext" data-next>Continue <span>→</span></button></div>
+      </div>
+      <div class="qstep" data-step="2">
+        <h3>Tell us about you</h3><div class="sub">Just the basics — this stays private.</div>
+        <div class="frow"><div class="field"><label>First name</label><input placeholder="Jane"></div><div class="field"><label>Last name</label><input placeholder="Doe"></div></div>
+        <div class="frow"><div class="field"><label>ZIP code</label><input placeholder="75039"></div><div class="field"><label>Date of birth</label><input type="date"></div></div>
+        <div class="qnav"><button class="qback" data-back>← Back</button><button class="qnext" data-next>Continue <span>→</span></button></div>
+      </div>
+      <div class="qstep" data-step="3">
+        <h3>Where should we reach you?</h3><div class="sub">We'll follow up the same day — promise.</div>
+        <div class="field"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+        <div class="field"><label>Phone</label><input placeholder="(469) 000-0000"></div>
+        <div class="qnav"><button class="qback" data-back>← Back</button><button class="qnext" data-submit>Get my quote <span>✓</span></button></div>
+      </div>
+      <div class="qstep" data-step="4">
+        <div class="qdone"><div class="qcheck">✓</div><h3>You're all set!</h3><p>Thanks — a Yeti agent will reach out within a few hours. Keep an eye on your inbox and phone.</p></div>
+      </div>
+    </div>
+    <aside class="trust-side reveal">
+      <div class="tside-card"><div class="big">4.9 ★</div><div class="lab">Average rating from 5,000+ members</div></div>
+      <div class="tside-card"><div class="tside-list">
+        <div class="li"><span class="ck">✓</span> No spam, ever</div>
+        <div class="li"><span class="ck">✓</span> Same-day response</div>
+        <div class="li"><span class="ck">✓</span> A-rated carriers</div>
+        <div class="li"><span class="ck">✓</span> Real, local agents</div>
+      </div></div>
+      <div class="tside-card dark"><div class="q">"Saved me $600 and the whole thing took ten minutes."</div><div class="who">— Jordan T., Irving TX</div></div>
+    </aside>
+  </div></section>
+</div><!-- /page-quote -->
+
+<!-- ============ CLAIM PAGE ============ -->
+<div id="page-claim" class="page">
+  <section class="page-hero">
+    <div class="ph-bg"></div>
+    <div class="wrap ph-in">
+      <div class="eyebrow reveal"><span class="ln"></span>Report a claim</div>
+      <h1 class="ph-title reveal">We're here. Let's<br>handle this <em>together.</em></h1>
+      <p class="ph-lede reveal">Take a breath — you're not doing this alone. Here's exactly what to do next, and we'll be right beside you the whole way.</p>
+    </div>
+  </section>
+  <section class="pad"><div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>What to do right now</div><h2>Three simple <em>steps.</em></h2></div>
+    <div class="claim-steps">
+      <div class="cstep reveal"><div class="cn">01</div><h4>Make sure everyone's safe</h4><p>If anyone is hurt or in danger, call 911 first. Your safety always comes before any paperwork.</p></div>
+      <div class="cstep reveal"><div class="cn">02</div><h4>Document what happened</h4><p>Take photos, note the date and details, and keep any receipts or reports. The more you have, the smoother the claim.</p></div>
+      <div class="cstep reveal"><div class="cn">03</div><h4>Call us — we take it from here</h4><p>One phone call and a Yeti advocate handles the carrier, the forms, and the follow-up for you.</p></div>
+    </div>
+  </div></section>
+  <section class="pad" style="padding-top:0"><div class="wrap">
+    <div class="claim-cta-band reveal">
+      <div><h3>Need to start a claim <em>right now?</em></h3><p style="font-size:15px;color:var(--muted);margin-top:8px">Call us directly — a real person answers.</p></div>
+      <div class="claim-phone"><span class="pic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span><div><div class="pl">Claim Support</div><div class="pn">(469) 345-6419</div></div></div>
+    </div>
+  </div></section>
+  <section class="pad faq"><div class="wrap">
+    <div class="sec-head" style="text-align:center;margin:0 auto 56px"><div class="eyebrow reveal" style="display:inline-block"><span class="ln"></span>You're covered</div><h2 class="reveal">Common claim <em>questions.</em></h2></div>
+    <div class="faq-list">
+      <div class="qa"><div class="qa-q"><h4>How soon should I report a claim?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>As soon as you safely can. The sooner we know, the sooner we can start advocating for you — but don't worry, we'll help you sort out the timeline.</p></div></div>
+      <div class="qa"><div class="qa-q"><h4>Will my rates go up if I file?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>Not always — it depends on the claim and the carrier. We'll give you an honest read on your options before you decide anything.</p></div></div>
+      <div class="qa"><div class="qa-q"><h4>Do you handle the carrier for me?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>Yes. That's the whole point of a local agent. We deal with the paperwork and the back-and-forth so you can focus on getting back to normal.</p></div></div>
+    </div>
+  </div></section>
+  <section class="cta"><div class="glow"></div><div class="wrap in"><h2 class="reveal">We've got <em>your back.</em></h2><p class="reveal">Questions about your coverage? We're a call away.</p><a class="btn-gold reveal" data-page="about">Meet Your Team <span>→</span></a></div></section>
+</div><!-- /page-claim -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox"><span class="lb-close">×</span><img id="lbImg" src="" alt=""></div>
 
 <!-- FOOTER -->
 <footer>
@@ -498,14 +919,15 @@
         <p>222 W Las Colinas Blvd #1650E<br>Irving, TX 75039</p>
         <p style="margin-top:12px"><a href="tel:+14693456419" style="color:var(--gold);padding:0">(469) 345-6419</a></p>
       </div>
-      <div class="foot-col"><div class="h">Coverage</div><a>Auto</a><a>Property</a><a>Health</a><a>Life</a></div>
-      <div class="foot-col"><div class="h">Company</div><a>About</a><a>Get a Quote</a><a>Report a Claim</a><a>Gallery</a></div>
+      <div class="foot-col"><div class="h">Coverage</div><a data-page="coverage">Auto</a><a data-page="coverage">Property</a><a data-page="coverage">Health</a><a data-page="coverage">Life</a></div>
+      <div class="foot-col"><div class="h">Company</div><a data-page="about">About</a><a data-page="quote">Get a Quote</a><a data-page="claim">Report a Claim</a><a data-page="about">Gallery</a></div>
       <div class="foot-col"><div class="h">Follow</div><a>Facebook</a><a>Instagram</a></div>
     </div>
     <div class="foot-bot"><span>© 2026 Yeti Insurance Agency LLC</span><span>Committed to Service Excellence</span></div>
   </div>
 </footer>
 
+<div class="note-banner">📐 <b>Prototype</b> — real animations, placeholder photos &amp; reviews. Scroll to see everything move.</div>
 
 <script>
   gsap.registerPlugin(ScrollTrigger);
@@ -525,15 +947,44 @@
     .to('#hcta',{opacity:1,duration:.7},'-=.7')
     .from('.hero-index .cell',{opacity:0,y:24,duration:.6,stagger:.1},'-=.5');
 
-  /* generic reveals */
-  gsap.utils.toArray('.reveal').forEach(el=>{
-    gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power3.out',
-      scrollTrigger:{trigger:el,start:'top 86%'}});
-  });
+  /* per-page reveals (set up lazily so hidden pages animate when shown) */
+  function setupReveals(scope){
+    scope.querySelectorAll('.reveal:not([data-rev])').forEach(el=>{
+      el.setAttribute('data-rev','1');
+      gsap.to(el,{opacity:1,y:0,duration:.85,ease:'power3.out',
+        scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+  }
+  setupReveals(document.getElementById('page-home'));
   /* stagger groups */
   gsap.utils.toArray('.cov-grid').forEach(g=>{
     gsap.to(g.querySelectorAll('.reveal'),{opacity:1,y:0,duration:.8,stagger:.12,ease:'power3.out',
       scrollTrigger:{trigger:g,start:'top 82%'}});
+  });
+
+  /* ---- ROUTER ---- */
+  const pages=document.querySelectorAll('.page');
+  function go(id){
+    const target=document.getElementById('page-'+id);
+    if(!target) return;
+    pages.forEach(p=>p.classList.remove('active'));
+    target.classList.add('active');
+    window.scrollTo(0,0);
+    nav.classList.remove('solid');
+    setupReveals(target);
+    setTimeout(()=>ScrollTrigger.refresh(),60);
+  }
+  document.querySelectorAll('[data-page]').forEach(a=>{
+    a.style.cursor='pointer';
+    a.addEventListener('click',e=>{e.preventDefault();go(a.getAttribute('data-page'));});
+  });
+
+  /* ---- LIGHTBOX ---- */
+  const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+  document.addEventListener('click',e=>{
+    const g=e.target.closest('.gallery .g');
+    if(g){lbImg.src=g.querySelector('img').src;lb.classList.add('open');return;}
+    if(e.target.closest('.lb-close')||e.target===lb){lb.classList.remove('open');}
   });
 
   /* PROCESS line draw + step activate */
@@ -652,6 +1103,25 @@
 
   /* cta glow drift */
   gsap.to('.cta .glow',{yPercent:-20,ease:'none',scrollTrigger:{trigger:'.cta',start:'top bottom',end:'bottom top',scrub:true}});
+
+  /* ---- QUOTE multi-step form ---- */
+  (function(){
+    const qp=document.getElementById('page-quote'); if(!qp) return;
+    const total=3; let step=1;
+    const bar=document.getElementById('qbar'), lbl=document.getElementById('qlbl');
+    function show(n){
+      qp.querySelectorAll('.qstep').forEach(s=>s.classList.toggle('on',+s.dataset.step===n));
+      if(n<=total){bar.style.width=(n/total*100)+'%';lbl.textContent='Step '+n+' of '+total;}
+      else{bar.style.width='100%';lbl.textContent='All done';}
+      step=n;
+    }
+    qp.querySelectorAll('.qopt').forEach(o=>o.addEventListener('click',()=>{
+      qp.querySelectorAll('.qopt').forEach(x=>x.classList.remove('sel'));o.classList.add('sel');
+    }));
+    qp.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(Math.min(step+1,total))));
+    qp.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(Math.max(step-1,1))));
+    const sub=qp.querySelector('[data-submit]'); if(sub) sub.addEventListener('click',()=>show(4));
+  })();
 </script>
 </body>
 </html>
