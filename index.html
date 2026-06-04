@@ -178,8 +178,8 @@
   .spot-contact .ci .ic{width:36px;height:36px;border-radius:10px;background:var(--alabaster);border:1px solid var(--platinum);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--maroon)}
   .spot-contact .ci .ic svg{width:16px;height:16px}
   .spot-story{position:relative;padding-top:4px}
-  .spot-quote{font-family:'Fraunces';font-size:120px;line-height:.5;color:var(--gold);height:50px;opacity:.85}
-  .spot-text{font-family:'Fraunces';font-weight:300;font-size:21px;line-height:1.75;color:var(--ink)}
+  .spot-quote{font-family:'Fraunces';font-size:96px;line-height:.5;color:var(--gold);height:40px;opacity:.85}
+  .spot-text{font-weight:400;font-size:16px;line-height:1.8;color:#3a343a}
   .spot-text p{margin-bottom:22px}
   .spot-text em{font-style:italic;color:var(--maroon)}
   .spot-nav{display:flex;gap:12px;margin-top:34px;align-items:center}
@@ -263,14 +263,35 @@
   .vcard h4{font-family:'Fraunces';font-weight:500;font-size:20px;margin-bottom:7px}
   .vcard p{font-size:13.5px;color:var(--muted);line-height:1.6}
 
-  /* team */
-  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .member .ph{aspect-ratio:4/5;border-radius:14px;overflow:hidden;margin-bottom:16px;box-shadow:0 14px 36px rgba(96,0,29,.10)}
-  .member .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .member:hover .ph img{transform:scale(1.06)}
-  .member h4{font-family:'Fraunces';font-weight:500;font-size:19px}
-  .member .role{font-size:12.5px;color:var(--gold);font-weight:600;margin-top:3px;letter-spacing:.3px}
-  .member>p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:9px}
+  /* team — the main feature of About */
+  .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+  .member{display:grid;grid-template-columns:160px 1fr;gap:26px;background:#fff;border:1px solid var(--platinum);border-radius:22px;padding:26px;align-items:start;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .45s}
+  .member:hover{transform:translateY(-4px);border-color:rgba(96,0,29,.30);box-shadow:0 22px 50px rgba(96,0,29,.12)}
+  .member .ph{aspect-ratio:4/5;border-radius:14px;overflow:hidden}
+  .member .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .member:hover .ph img{transform:scale(1.05)}
+  .member h4{font-family:'Fraunces';font-weight:500;font-size:23px;line-height:1.1;transition:color .3s}
+  .member:hover h4{color:var(--maroon)}
+  .member .role{font-size:13px;color:var(--gold);font-weight:600;margin-top:5px;letter-spacing:.3px}
+  .member>div>p{font-size:13.5px;color:var(--muted);line-height:1.6;margin-top:12px}
+  .member-contact{margin-top:16px;display:flex;flex-direction:column;gap:9px}
+  .mc-row{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:500;color:var(--ink);transition:color .2s}
+  .mc-row:hover{color:var(--maroon)}
+  .mc-ic{width:34px;height:34px;border-radius:9px;background:var(--alabaster);border:1px solid var(--platinum);display:flex;align-items:center;justify-content:center;color:var(--maroon);flex-shrink:0}
+  .mc-ic svg{width:15px;height:15px}
+  .mc-social{display:flex;gap:8px;margin-top:5px}
+  .mc-social a{width:34px;height:34px;border-radius:9px;background:var(--alabaster);border:1px solid var(--platinum);display:flex;align-items:center;justify-content:center;color:var(--maroon);transition:background .25s,color .25s,transform .25s}
+  .mc-social a:hover{background:var(--maroon);color:#fff;transform:translateY(-2px)}
+  .mc-social a svg{width:15px;height:15px}
+  .field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--platinum);border-radius:11px;font-family:'Geist';font-size:14px;color:var(--ink);background:#fff;transition:border-color .25s;resize:vertical;min-height:96px}
+  .field textarea:focus{outline:none;border-color:var(--maroon)}
+  .simple-form h3{font-family:'Fraunces';font-weight:500;font-size:26px;margin-bottom:6px}
+  .simple-form .sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+  .simple-form.hide{display:none}
+  .form-thanks{display:none;text-align:center;padding:30px 10px}
+  .form-thanks.show{display:block;animation:slidein .4s ease}
+  .form-thanks h3{font-family:'Fraunces';font-weight:500;font-size:28px;margin-bottom:8px}
+  .form-thanks p{font-size:15px;color:var(--muted);line-height:1.6;max-width:380px;margin:0 auto}
 
   /* gallery masonry */
   .gallery{columns:4;column-gap:16px}
@@ -384,7 +405,9 @@
   @media(max-width:900px){
     .hero-grid,.why-grid,.spot-wrap,.map-row,.quote-wrap{grid-template-columns:1fr}
     h1.hero-h{font-size:52px}.cov-grid{grid-template-columns:1fr 1fr}
-    .band .in,.foot-grid,.arch-grid,.vals-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+    .band .in,.foot-grid,.arch-grid,.vals-grid{grid-template-columns:repeat(2,1fr)}
+    .team-grid{grid-template-columns:1fr}
+    .member{grid-template-columns:130px 1fr;gap:18px;padding:18px}
     .gallery{columns:2}
     .ph-title{font-size:44px}
     .cov-detail{grid-template-columns:1fr;gap:30px}
@@ -656,6 +679,75 @@
     </div>
   </section>
 
+  <!-- MEET THE TEAM (top priority) -->
+  <section class="pad">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-bottom:50px"><div class="eyebrow"><span class="ln"></span>Meet the team</div><h2>The people <em>behind Yeti.</em></h2></div>
+      <div class="team-grid">
+        <div class="member reveal">
+          <div class="ph"><img src="https://picsum.photos/seed/yetiteam21/500/620"></div>
+          <div class="member-info">
+            <h4>Shraddha Shrestha</h4><div class="role">CEO &amp; Managing Director</div>
+            <p>Leads Yeti with a simple vision — insurance that's personal, honest, and built around members.</p>
+            <div class="member-contact">
+              <a class="mc-row" href="tel:+14693456419"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span>(469) 345-6419</a>
+              <a class="mc-row" href="mailto:shraddha.yeti@gmail.com"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>shraddha.yeti@gmail.com</a>
+              <div class="mc-social">
+                <a href="https://facebook.com/yetiinsurance" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17.6V.2C17.2.1 16.1 0 14.9 0 12.3 0 10 1.5 10 4.2V6H7v3h3v9h4z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8h4v13H3zM9 8h3.8v1.8h.1c.5-1 1.8-2 3.8-2 4 0 4.7 2.6 4.7 6V21H21v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H13z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="member reveal">
+          <div class="ph"><img src="https://picsum.photos/seed/yetiteam22/500/620"></div>
+          <div class="member-info">
+            <h4>Suraj Poudyal</h4><div class="role">Principal Agent &amp; Co-Owner / Partner</div>
+            <p>Your go-to for auto, property and tailored coverage that fits real life.</p>
+            <div class="member-contact">
+              <a class="mc-row" href="tel:+14693456419"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span>(469) 345-6419</a>
+              <a class="mc-row" href="mailto:suraj.yeti@gmail.com"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>suraj.yeti@gmail.com</a>
+              <div class="mc-social">
+                <a href="https://facebook.com/yetiinsurance" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17.6V.2C17.2.1 16.1 0 14.9 0 12.3 0 10 1.5 10 4.2V6H7v3h3v9h4z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8h4v13H3zM9 8h3.8v1.8h.1c.5-1 1.8-2 3.8-2 4 0 4.7 2.6 4.7 6V21H21v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H13z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="member reveal">
+          <div class="ph"><img src="https://picsum.photos/seed/yetiteam23/500/620"></div>
+          <div class="member-info">
+            <h4>Anjana Shrestha</h4><div class="role">Agent &amp; Managing Partner · Health &amp; Life</div>
+            <p>Helps families protect their health and plan ahead with confidence.</p>
+            <div class="member-contact">
+              <a class="mc-row" href="tel:+14693456419"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span>(469) 345-6419</a>
+              <a class="mc-row" href="mailto:anjana.yeti@gmail.com"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>anjana.yeti@gmail.com</a>
+              <div class="mc-social">
+                <a href="https://facebook.com/yetiinsurance" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17.6V.2C17.2.1 16.1 0 14.9 0 12.3 0 10 1.5 10 4.2V6H7v3h3v9h4z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8h4v13H3zM9 8h3.8v1.8h.1c.5-1 1.8-2 3.8-2 4 0 4.7 2.6 4.7 6V21H21v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H13z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="member reveal">
+          <div class="ph"><img src="https://picsum.photos/seed/yetiteam24/500/620"></div>
+          <div class="member-info">
+            <h4>Radha Thapa</h4><div class="role">Life Insurance Partner · New York Life</div>
+            <p>Specializes in life coverage that secures what matters most for the long run.</p>
+            <div class="member-contact">
+              <a class="mc-row" href="tel:+14693456419"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span>(469) 345-6419</a>
+              <a class="mc-row" href="mailto:radha.yeti@gmail.com"><span class="mc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>radha.yeti@gmail.com</a>
+              <div class="mc-social">
+                <a href="https://facebook.com/yetiinsurance" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17.6V.2C17.2.1 16.1 0 14.9 0 12.3 0 10 1.5 10 4.2V6H7v3h3v9h4z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8h4v13H3zM9 8h3.8v1.8h.1c.5-1 1.8-2 3.8-2 4 0 4.7 2.6 4.7 6V21H21v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H13z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="pad">
     <div class="wrap">
       <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>Our story</div><h2>Built on service,<br>not <em>sales.</em></h2></div>
@@ -677,18 +769,6 @@
         <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>Honest guidance</h4><p>Plain language, no jargon, no upsell. You only pay for the coverage you actually need.</p></div>
         <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h4>Always on your side</h4><p>At claim time we advocate for you with the carrier — not the other way around.</p></div>
         <div class="vcard reveal"><div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div><h4>Family-first</h4><p>Every policy protects someone's family. We never forget there are real people behind it.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pad">
-    <div class="wrap">
-      <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>Meet the team</div><h2>The people <em>behind Yeti.</em></h2></div>
-      <div class="team-grid">
-        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam21/500/620"></div><h4>Shraddha Shrestha</h4><div class="role">CEO &amp; Managing Director</div><p>Leads Yeti with a simple vision — insurance that's personal, honest, and built around members.</p></div>
-        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam22/500/620"></div><h4>Suraj Poudyal</h4><div class="role">Principal Agent &amp; Co-Owner / Partner</div><p>Your go-to for auto, property and tailored coverage that fits real life.</p></div>
-        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam23/500/620"></div><h4>Anjana Shrestha</h4><div class="role">Agent &amp; Managing Partner · Health &amp; Life</div><p>Helps families protect their health and plan ahead with confidence.</p></div>
-        <div class="member reveal"><div class="ph"><img src="https://picsum.photos/seed/yetiteam24/500/620"></div><h4>Radha Thapa</h4><div class="role">Life Insurance Partner · New York Life</div><p>Specializes in life coverage that secures what matters most for the long run.</p></div>
       </div>
     </div>
   </section>
@@ -817,7 +897,6 @@
       <div class="qa"><div class="qa-q"><h4>Which carriers do you work with?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>We're an independent agency, so we shop multiple A-rated carriers to find your best fit — instead of pushing a single company's products.</p></div></div>
     </div>
   </div></section>
-  <section class="cta"><div class="glow"></div><div class="wrap in"><h2 class="reveal">Not sure what<br>you <em>need?</em></h2><p class="reveal">Tell us about your life — we'll handle the rest.</p><a class="btn-gold reveal" data-page="quote">Get Your Free Quote <span>→</span></a></div></section>
 </div><!-- /page-coverage -->
 
 <!-- ============ QUOTE PAGE ============ -->
@@ -832,32 +911,15 @@
   </section>
   <section class="pad" style="padding-top:24px"><div class="wrap quote-wrap">
     <div class="qform reveal">
-      <div class="qprog"><div class="lbl" id="qlbl">Step 1 of 3</div><div class="bar"><i id="qbar"></i></div></div>
-      <div class="qstep on" data-step="1">
-        <h3>What do you need covered?</h3><div class="sub">Pick one to start — you can add more later.</div>
-        <div class="qopts">
-          <div class="qopt" data-val="Auto"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13l2-5a2 2 0 012-1.5h10A2 2 0 0119 8l2 5v5a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></svg></span><div><div class="qt">Auto</div><div class="qd">Cars, trucks &amp; more</div></div></div>
-          <div class="qopt" data-val="Property"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span><div><div class="qt">Property</div><div class="qd">Home &amp; belongings</div></div></div>
-          <div class="qopt" data-val="Health"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><div><div class="qt">Health</div><div class="qd">Individual &amp; family</div></div></div>
-          <div class="qopt" data-val="Life"><span class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><div class="qt">Life</div><div class="qd">Term &amp; whole life</div></div></div>
-        </div>
-        <div class="qnav"><span></span><button class="qnext" data-next>Continue <span>→</span></button></div>
-      </div>
-      <div class="qstep" data-step="2">
-        <h3>Tell us about you</h3><div class="sub">Just the basics — this stays private.</div>
-        <div class="frow"><div class="field"><label>First name</label><input placeholder="Jane"></div><div class="field"><label>Last name</label><input placeholder="Doe"></div></div>
-        <div class="frow"><div class="field"><label>ZIP code</label><input placeholder="75039"></div><div class="field"><label>Date of birth</label><input type="date"></div></div>
-        <div class="qnav"><button class="qback" data-back>← Back</button><button class="qnext" data-next>Continue <span>→</span></button></div>
-      </div>
-      <div class="qstep" data-step="3">
-        <h3>Where should we reach you?</h3><div class="sub">We'll follow up the same day — promise.</div>
+      <form class="simple-form" id="quoteForm">
+        <h3>Get a Quote</h3><div class="sub">Committed to Service Excellence · Auto · Property · Health · Life</div>
+        <div class="field"><label>Select a Service *</label><select required><option value="" disabled selected>Choose a service…</option><option>Auto</option><option>Property</option><option>Health</option><option>Life</option><option>Multiple / Bundle</option></select></div>
+        <div class="field"><label>To what extent? *</label><select required><option value="" disabled selected>Tell us a bit more…</option><option>Just exploring options</option><option>I need coverage soon</option><option>Switching from another provider</option><option>Adding to an existing policy</option></select></div>
+        <div class="frow"><div class="field"><label>Full name</label><input placeholder="Jane Doe"></div><div class="field"><label>Phone</label><input placeholder="(469) 000-0000"></div></div>
         <div class="field"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
-        <div class="field"><label>Phone</label><input placeholder="(469) 000-0000"></div>
-        <div class="qnav"><button class="qback" data-back>← Back</button><button class="qnext" data-submit>Get my quote <span>✓</span></button></div>
-      </div>
-      <div class="qstep" data-step="4">
-        <div class="qdone"><div class="qcheck">✓</div><h3>You're all set!</h3><p>Thanks — a Yeti agent will reach out within a few hours. Keep an eye on your inbox and phone.</p></div>
-      </div>
+        <button type="submit" class="qnext" style="width:100%;justify-content:center">Submit Request</button>
+      </form>
+      <div class="form-thanks" id="quoteThanks"><div class="qcheck">✓</div><h3>Thanks for submitting!</h3><p>We'll contact you shortly. A Yeti agent will reach out the same day.</p></div>
     </div>
     <aside class="trust-side reveal">
       <div class="tside-card"><div class="big">4.9 ★</div><div class="lab">Average rating from 5,000+ members</div></div>
@@ -878,23 +940,30 @@
     <div class="ph-bg"></div>
     <div class="wrap ph-in">
       <div class="eyebrow reveal"><span class="ln"></span>Report a claim</div>
-      <h1 class="ph-title reveal">We're here. Let's<br>handle this <em>together.</em></h1>
-      <p class="ph-lede reveal">Take a breath — you're not doing this alone. Here's exactly what to do next, and we'll be right beside you the whole way.</p>
+      <h1 class="ph-title reveal">Report your claim<br><em>today.</em></h1>
+      <p class="ph-lede reveal">Committed to Service Excellence. Tell us what happened and we'll contact you shortly — then we'll handle the rest, start to finish.</p>
     </div>
   </section>
-  <section class="pad"><div class="wrap">
-    <div class="sec-head reveal"><div class="eyebrow"><span class="ln"></span>What to do right now</div><h2>Three simple <em>steps.</em></h2></div>
-    <div class="claim-steps">
-      <div class="cstep reveal"><div class="cn">01</div><h4>Make sure everyone's safe</h4><p>If anyone is hurt or in danger, call 911 first. Your safety always comes before any paperwork.</p></div>
-      <div class="cstep reveal"><div class="cn">02</div><h4>Document what happened</h4><p>Take photos, note the date and details, and keep any receipts or reports. The more you have, the smoother the claim.</p></div>
-      <div class="cstep reveal"><div class="cn">03</div><h4>Call us — we take it from here</h4><p>One phone call and a Yeti advocate handles the carrier, the forms, and the follow-up for you.</p></div>
+  <section class="pad" style="padding-top:24px"><div class="wrap quote-wrap">
+    <div class="qform reveal">
+      <form class="simple-form" id="claimForm">
+        <h3>Report a Claim</h3><div class="sub">Committed to Service Excellence</div>
+        <div class="field"><label>Select a Service *</label><select required><option value="" disabled selected>Choose a service…</option><option>Auto</option><option>Property</option><option>Health</option><option>Life</option></select></div>
+        <div class="field"><label>Tell us what happened (optional)</label><textarea placeholder="A short description helps us help you faster…"></textarea></div>
+        <div class="frow"><div class="field"><label>Full name</label><input placeholder="Jane Doe"></div><div class="field"><label>Phone</label><input placeholder="(469) 000-0000"></div></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+        <button type="submit" class="qnext" style="width:100%;justify-content:center">Submit Request</button>
+      </form>
+      <div class="form-thanks" id="claimThanks"><div class="qcheck">✓</div><h3>Thanks for submitting!</h3><p>We'll contact you shortly. A Yeti advocate will reach out and take it from here.</p></div>
     </div>
-  </div></section>
-  <section class="pad" style="padding-top:0"><div class="wrap">
-    <div class="claim-cta-band reveal">
-      <div><h3>Need to start a claim <em>right now?</em></h3><p style="font-size:15px;color:var(--muted);margin-top:8px">Call us directly — a real person answers.</p></div>
-      <div class="claim-phone"><span class="pic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6 2 2 0 015 4z"/></svg></span><div><div class="pl">Claim Support</div><div class="pn">(469) 345-6419</div></div></div>
-    </div>
+    <aside class="trust-side reveal">
+      <div class="tside-card dark"><div class="lab" style="color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;font-size:11px">Need to talk now?</div><div class="big" style="color:#fff;font-size:25px;margin-top:6px">(469) 345-6419</div><div class="who">We answer — a real person, every time.</div></div>
+      <div class="tside-card"><div class="tside-list">
+        <div class="li"><span class="ck">✓</span> We advocate for you</div>
+        <div class="li"><span class="ck">✓</span> We handle the carrier</div>
+        <div class="li"><span class="ck">✓</span> Start-to-finish support</div>
+      </div></div>
+    </aside>
   </div></section>
   <section class="pad faq"><div class="wrap">
     <div class="sec-head" style="text-align:center;margin:0 auto 56px"><div class="eyebrow reveal" style="display:inline-block"><span class="ln"></span>You're covered</div><h2 class="reveal">Common claim <em>questions.</em></h2></div>
@@ -902,9 +971,9 @@
       <div class="qa"><div class="qa-q"><h4>How soon should I report a claim?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>As soon as you safely can. The sooner we know, the sooner we can start advocating for you — but don't worry, we'll help you sort out the timeline.</p></div></div>
       <div class="qa"><div class="qa-q"><h4>Will my rates go up if I file?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>Not always — it depends on the claim and the carrier. We'll give you an honest read on your options before you decide anything.</p></div></div>
       <div class="qa"><div class="qa-q"><h4>Do you handle the carrier for me?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>Yes. That's the whole point of a local agent. We deal with the paperwork and the back-and-forth so you can focus on getting back to normal.</p></div></div>
+      <div class="qa"><div class="qa-q"><h4>What information do I need to file?</h4><span class="qa-ic">+</span></div><div class="qa-a"><p>Just the basics to start — your name, what happened, and the service involved. We'll guide you through anything else the carrier needs.</p></div></div>
     </div>
   </div></section>
-  <section class="cta"><div class="glow"></div><div class="wrap in"><h2 class="reveal">We've got <em>your back.</em></h2><p class="reveal">Questions about your coverage? We're a call away.</p><a class="btn-gold reveal" data-page="about">Meet Your Team <span>→</span></a></div></section>
 </div><!-- /page-claim -->
 
 <!-- LIGHTBOX -->
@@ -1104,24 +1173,18 @@
   /* cta glow drift */
   gsap.to('.cta .glow',{yPercent:-20,ease:'none',scrollTrigger:{trigger:'.cta',start:'top bottom',end:'bottom top',scrub:true}});
 
-  /* ---- QUOTE multi-step form ---- */
-  (function(){
-    const qp=document.getElementById('page-quote'); if(!qp) return;
-    const total=3; let step=1;
-    const bar=document.getElementById('qbar'), lbl=document.getElementById('qlbl');
-    function show(n){
-      qp.querySelectorAll('.qstep').forEach(s=>s.classList.toggle('on',+s.dataset.step===n));
-      if(n<=total){bar.style.width=(n/total*100)+'%';lbl.textContent='Step '+n+' of '+total;}
-      else{bar.style.width='100%';lbl.textContent='All done';}
-      step=n;
-    }
-    qp.querySelectorAll('.qopt').forEach(o=>o.addEventListener('click',()=>{
-      qp.querySelectorAll('.qopt').forEach(x=>x.classList.remove('sel'));o.classList.add('sel');
-    }));
-    qp.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(Math.min(step+1,total))));
-    qp.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(Math.max(step-1,1))));
-    const sub=qp.querySelector('[data-submit]'); if(sub) sub.addEventListener('click',()=>show(4));
-  })();
+  /* ---- simple quote / claim forms (match real site) ---- */
+  function wireForm(formId,thanksId){
+    const f=document.getElementById(formId),t=document.getElementById(thanksId);
+    if(!f||!t) return;
+    f.addEventListener('submit',e=>{
+      e.preventDefault();
+      if(!f.checkValidity()){f.reportValidity();return;}
+      f.classList.add('hide');t.classList.add('show');
+    });
+  }
+  wireForm('quoteForm','quoteThanks');
+  wireForm('claimForm','claimThanks');
 </script>
 </body>
 </html>
